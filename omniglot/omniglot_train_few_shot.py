@@ -44,6 +44,7 @@ LEARNING_RATE = args.learning_rate
 GPU = args.gpu
 HIDDEN_UNIT = args.hidden_unit
 
+# feature encoder: 4 layer Conv
 class CNNEncoder(nn.Module):
     """docstring for ClassName"""
     def __init__(self):
@@ -75,6 +76,7 @@ class CNNEncoder(nn.Module):
         #out = out.view(out.size(0),-1)
         return out # 64
 
+# CompareNet: 2 layer Conv + 2 layer FC    
 class RelationNetwork(nn.Module):
     """docstring for RelationNetwork"""
     def __init__(self,input_size,hidden_size):
